@@ -38,7 +38,7 @@ _info "--------------------------------------------------"
 _info "Capturing Password Information"
 _info "--------------------------------------------------"
 cat /etc/passwd | cut -d: -f1,2 >> ${PCI_AUDIT_OUTPUT_DIR}/${HOSTNAME}_Passwords.txt
-sudo cat /etc/shadow | cut -d: -f1,2 >> ${PCI_AUDIT_OUTPUT_DIR}/${HOSTNAME}_Passwords2.txt || true
+#sudo cat /etc/shadow | cut -d: -f1,2 >> ${PCI_AUDIT_OUTPUT_DIR}/${HOSTNAME}_Passwords2.txt || true
 grep -v \# /etc/pam.d/login >> ${PCI_AUDIT_OUTPUT_DIR}/${HOSTNAME}_Password_Rules.txt || true
 grep -v \# /etc/pam.d/common-password >> ${PCI_AUDIT_OUTPUT_DIR}/${HOSTNAME}_Password_Rules2.txt || true
 
