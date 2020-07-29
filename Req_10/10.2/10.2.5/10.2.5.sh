@@ -29,7 +29,7 @@ _info "--------------------------------------------------"
 _info "--------------------------------------------------"
 _info "Capturing Elevation of Privileges"
 _info "--------------------------------------------------"
-journalctl -o cat _COMM=sudo >> ${PCI_AUDIT_OUTPUT_DIR}/${HOSTNAME}_Privilege_Elevation.txt
+journalctl -o cat _COMM=sudo >> ${PCI_AUDIT_OUTPUT_DIR}/${HOSTNAME}_Privilege_Elevation.txt  2>&1 || true
 
 
 # Return to the parent directory

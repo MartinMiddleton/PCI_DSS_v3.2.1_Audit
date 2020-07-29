@@ -25,14 +25,14 @@ _info "--------------------------------------------------"
 _info "--------------------------------------------------"
 _info "Capturing Log Info for root/administrative Access"
 _info "--------------------------------------------------"
-journalctl -o cat _COMM=sudo >> ${PCI_AUDIT_OUTPUT_DIR}/${HOSTNAME}_Root_Access_Log.txt
+journalctl -o cat _COMM=sudo >> ${PCI_AUDIT_OUTPUT_DIR}/${HOSTNAME}_Root_Access_Log.txt  2>&1 || true
 cat /var/log/auth.log >> ${PCI_AUDIT_OUTPUT_DIR}/${HOSTNAME}_Root_Access_Log2.txt 2>&1 || true
 journalctl -u cron >> ${PCI_AUDIT_OUTPUT_DIR}/${HOSTNAME}_Root_Access_Log3.txt 2>&1 || true
 
 _info "--------------------------------------------------"
 _info "Capturing Log Info for Alternative User Access"
 _info "--------------------------------------------------"
-journalctl -o cat _COMM=su >> ${PCI_AUDIT_OUTPUT_DIR}/${HOSTNAME}_Alternative_User_Access_Log.txt
+journalctl -o cat _COMM=su >> ${PCI_AUDIT_OUTPUT_DIR}/${HOSTNAME}_Alternative_User_Access_Log.txt  2>&1 || true
 
 # Return to the parent directory
 cd $(dirname $(get_script_dir))

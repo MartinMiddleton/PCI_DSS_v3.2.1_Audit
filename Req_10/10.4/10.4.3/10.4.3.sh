@@ -30,7 +30,7 @@ _info "Capturing Time Source Information"
 _info "--------------------------------------------------"
 cat /etc/systemd/timesyncd.conf >> ${PCI_AUDIT_OUTPUT_DIR}/${HOSTNAME}_Time_Source.txt 2>&1 || true
 cat /etc/ntp.conf >> ${PCI_AUDIT_OUTPUT_DIR}/${HOSTNAME}_Time_Source2.txt 2>&1 || true
-journalctl |grep -i time >> ${PCI_AUDIT_OUTPUT_DIR}/${HOSTNAME}_Time_Source3.txt 2>&1 || true
+#journalctl | grep -i time >> ${PCI_AUDIT_OUTPUT_DIR}/${HOSTNAME}_Time_Source3.txt 2>&1 || true
 
 # Return to the parent directory
 cd $(dirname $(get_script_dir))

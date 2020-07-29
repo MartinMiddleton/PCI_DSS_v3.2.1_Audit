@@ -43,7 +43,7 @@ _info "--------------------------------------------------"
 _info "--------------------------------------------------"
 _info "Gathering log information"
 _info "--------------------------------------------------"
-cat /var/log/syslog >> ${PCI_AUDIT_OUTPUT_DIR}/${HOSTNAME}_syslog.txt
+sudo cat /var/log/syslog >> ${PCI_AUDIT_OUTPUT_DIR}/${HOSTNAME}_syslog.txt 2>&1 || true
 
 # Return to the parent directory
 cd $(dirname $(get_script_dir))
